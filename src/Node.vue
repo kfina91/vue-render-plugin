@@ -97,6 +97,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@use 'sass:math';
 @import "./vars";
 
 .node {
@@ -113,7 +114,6 @@ export default defineComponent({
   user-select: none;
   .title {
     color: white;
-    // font-family: sans-serif;
     font-size: 18px;
     padding: 8px;
   }
@@ -131,11 +131,8 @@ export default defineComponent({
   }
   .input-title,.output-title {
     vertical-align: middle;
-    // color: white;
     display: inline-block;
-    // font-family: sans-serif;
     font-size: 14px;
-    // margin: $socket-margin;
     line-height: $socket-size;
   }
   .input-control {
@@ -145,7 +142,7 @@ export default defineComponent({
     display: inline-block;
   }
   .control {
-    padding: $socket-margin $socket-size/2 + $socket-margin;
+    padding: $socket-margin math.div($socket-size,2) + $socket-margin;
   }
 }
 </style>
