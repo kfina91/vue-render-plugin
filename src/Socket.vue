@@ -26,7 +26,7 @@ export default defineComponent({
   display: inline-block;
   cursor: pointer;
   border: 1px solid white;
-  border-radius: math.div(-$socket-size, 2);
+  border-radius: math.div($socket-size, 2);
   width: $socket-size;
   height: $socket-size;
   margin: $socket-margin;

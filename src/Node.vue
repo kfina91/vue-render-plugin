@@ -19,7 +19,7 @@
     >
     </div>
     <!-- Inputs-->
-    <div v-if="inputs.length > 0">Input parameters:</div>
+    <div v-if="inputs().length > 0">Input parameters:</div>
     <div class="input" v-for="input in inputs()" :key="input.key">
       <Socket
         v-socket:input="input"
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, ref } from "vue";
 import Mixin from './mixin';
 import Socket from "./Socket.vue";
 import { kebab } from "./utils";
@@ -90,8 +90,9 @@ export default defineComponent({
       if (hovered.value) pSBC(0.25, props.node.ref.color); // 25% brighter version of the color
       else return props.node.ref.color;
     });*/
+    // console.log("props.node", props.node);
 
-    return { className, hovered };
+    return { className, hovered, "node": props.node };
   }
 });
 </script>
