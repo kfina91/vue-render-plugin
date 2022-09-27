@@ -1,5 +1,5 @@
 <template>
-  <div class="socket" :class="className" :title="socket.name"></div>
+  <div class="socket" :class="className" :title="socket.name" :style="{background: socket.color || 'white'}"></div>
 </template>
 
 <script>
@@ -30,7 +30,6 @@ export default defineComponent({
   height: $socket-size;
   margin: $socket-margin;
   vertical-align: middle;
-  background: $socket-color;
   z-index: 2;
   box-sizing: border-box;
   &:hover {
