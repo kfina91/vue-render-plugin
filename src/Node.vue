@@ -19,7 +19,7 @@
     >
     </div>
     <!-- Inputs-->
-    <div v-if="inputs().length > 0">Input parameters:</div>
+    <div v-if="inputs().length > 0" class="innertext">Input parameters:</div>
     <div class="input" v-for="input in inputs()" :key="input.key">
       <Socket
         v-socket:input="input"
@@ -131,6 +131,7 @@ export default defineComponent({
     text-align: left;
   }
   .input-title,.output-title {
+    color: white;
     vertical-align: middle;
     display: inline-block;
     font-size: 14px;
